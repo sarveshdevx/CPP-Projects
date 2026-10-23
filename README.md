@@ -1,115 +1,107 @@
-# C++ DOB & Weekday Calculator
+# C++ Projects Portfolio
 
-A beginner-friendly C++ project that calculates the **day of the week on which a person was born** and the **number of days elapsed since their date of birth**.
+Welcome to my central repository for C++ projects. This repository serves as a portfolio of my practical journey with C++, spanning fundamental syntax and algorithmic problem-solving to modern systems programming and cryptography.
 
-The project uses basic C++ concepts and manual date calculations to understand how dates, leap years, and weekdays work.
-
-## Features
-
-- **Day of the Week:** Finds whether the birth date falls on a Monday, Tuesday, Wednesday, etc.
-- **Days Elapsed:** Calculates the number of days between the birth date and the current date.
-- **Leap Year Handling:** Accounts for leap years using the Gregorian calendar rules.
-- **Current Date Detection:** Uses C++ `<chrono>` and `<ctime>` to obtain the current system date.
-- **Date Validation:** Checks basic date ranges and prevents future dates.
-
-## Concepts Used
-
-- C++ functions
-- `switch` statements and fall-through
-- `if-else` conditions
-- `for` loops
-- Arithmetic and modulo operations
-- Leap year calculations
-- `<chrono>` and `<ctime>` libraries
-
-## How It Works
-
-The program divides the calculation into three main functions:
-
-| Function | Purpose |
-|---|---|
-| `ty()` | Calculates the day number within a year. |
-| `dy()` | Calculates the days remaining after the birth date in its year. |
-| `by()` | Calculates the number of days in the complete years between the birth year and current year. |
-
-The program combines these calculations to determine the elapsed days. It also calculates the birth date's weekday using a reference date and the modulo operator (`% 7`).
-
-## How to Run
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/cpp-dob-weekday-calculator.git
-```
-
-Replace `YOUR_USERNAME` with your GitHub username.
-
-### 2. Open the project folder
-
-```bash
-cd cpp-dob-weekday-calculator
-```
-
-### 3. Compile the program
-
-If you have GCC installed, run:
-
-```bash
-g++ main.cpp -o dob_calculator
-```
-
-### 4. Run the program
-
-On macOS or Linux:
-
-```bash
-./dob_calculator
-```
-
-On Windows:
-
-```bash
-dob_calculator.exe
-```
-
-## Input Format
-
-Enter your date of birth in the following format:
-
-```text
-ddmmyyyy
-```
-
-For example:
-
-```text
-Enter Your DOB (ddmmyyyy):
-15082000
-```
-
-The program displays the number of elapsed days and the weekday on which you were born.
-
-## Current Limitations
-
-- The program does not yet validate the exact number of days in each month. For example, `31022000` may be accepted even though it is not a valid date.
-- Input is read as an integer, so dates with a leading zero, such as `01012000`, are not handled correctly.
-- The calculation uses the Gregorian calendar and restricts birth years to 1900 or later.
-
-These limitations can be addressed in future improvements.
-
-## Future Improvements
-
-- Add complete calendar-date validation.
-- Accept dates using string input to preserve leading zeros.
-- Improve the output formatting.
-- Add automated test cases for leap years and known weekdays.
-- Refactor the date calculations for improved readability.
-
-## Learning Goal
-
-This project was created to practise C++ fundamentals by building a date calculator without relying on a dedicated date-calculation library.
+As I build new applications and explore advanced C++ concepts, each project is added here as an independent, self-contained module with its own source code, documentation, and build instructions.
 
 ---
 
-**Built with C++**  
-*Learning, experimenting, and improving one project at a time.*
+## Repository Structure
+
+```text
+DOBC/
+├── README.md                          # Portfolio index and documentation
+├── .gitignore                         # Build and temporary artifacts ignore rules
+├── 01-dob-weekday-calculator/         # Project 1: Date of birth & weekday calculator
+│   ├── dob.cpp                        # Calculator source code
+│   └── README.md                      # Project-specific documentation
+└── 02-password-manager/               # Project 2: CLI encrypted password manager
+    ├── password_manager.cpp           # Vault & encryption implementation
+    ├── CMakeLists.txt                 # CMake build configuration
+    └── README.md                      # Project-specific documentation
+```
+
+---
+
+## Project Index
+
+| # | Project | Description | Primary Concepts | Status |
+|---|---|---|---|---|
+| **01** | [DOB & Weekday Calculator](./01-dob-weekday-calculator/) | Calculates elapsed days and birth weekday from a date of birth using manual calendar arithmetic. | Functions, `switch` fall-through, `if-else`, loops, `<chrono>`, `<ctime>`. | Completed |
+| **02** | [CLI Encrypted Password Manager](./02-password-manager/) | Terminal-based password manager securing credentials with Argon2id and XChaCha20-Poly1305 AEAD. | Modern C++17, structs, `std::vector`, POSIX `termios`, byte serialization, `libsodium`. | Completed |
+
+---
+
+## Project Details
+
+### 01. [DOB & Weekday Calculator](./01-dob-weekday-calculator/)
+
+- **Folder:** [`01-dob-weekday-calculator/`](./01-dob-weekday-calculator/)
+- **Description:** A console application that reads a user's date of birth in numeric format (`ddmmyyyy`), queries the system clock for the current date, validates chronological validity, and calculates both total days lived and the specific weekday on which they were born.
+- **Key Concepts:**
+  - Date decomposition using integer arithmetic (`%` and `/`).
+  - Gregorian calendar leap year logic (`(y % 4 == 0 && y % 100 != 0) || (y % 400 == 0)`).
+  - Cumulative day calculation using `switch-case` fall-through.
+  - Integration with `<chrono>` and `<ctime>` for live date querying.
+- **Quick Compilation & Run:**
+  ```bash
+  cd 01-dob-weekday-calculator
+  g++ -std=c++11 dob.cpp -o dob_calculator
+  ./dob_calculator
+  ```
+
+---
+
+### 02. [CLI Encrypted Password Manager](./02-password-manager/)
+
+- **Folder:** [`02-password-manager/`](./02-password-manager/)
+- **Description:** An authenticated command-line credential manager. Master passwords are used with Argon2id to derive 256-bit keys that encrypt a local credential vault using XChaCha20-Poly1305. The terminal suppresses echo during password entry, and sensitive memory is sanitized using `sodium_memzero`.
+- **Key Concepts:**
+  - C++17 standard filesystem and memory operations.
+  - Low-level binary serialization and deserialization with bitwise operations.
+  - Secure credential lifecycle management (Add, Update, Delete, List, Lock).
+  - Masking password input in terminal sessions via POSIX `<termios.h>`.
+  - Cryptographic integration with `libsodium` (Argon2id, XChaCha20-Poly1305, Base64/Hex encoding).
+- **Quick Compilation & Run:**
+  ```bash
+  cd 02-password-manager
+  # Method A: Direct compilation with pkg-config
+  g++ -std=c++17 password_manager.cpp $(pkg-config --cflags --libs libsodium) -o password_manager
+  ./password_manager
+
+  # Method B: Using CMake
+  cmake -B build -S .
+  cmake --build build
+  ./build/password_manager
+  ```
+
+---
+
+## Adding Future Projects
+
+Whenever a new C++ project is developed, it is added following this repeatable workflow:
+
+1. **Create a numbered folder:** Use the standard naming convention (e.g., `03-network-packet-sniffer/`, `04-mini-database/`).
+2. **Add C++ source files:** Place all source code (`.cpp`, `.hpp`, `.h`), build files, and assets inside that dedicated project folder.
+3. **Write a project `README.md`:** Document the project using the standard template:
+   - Project title & overview
+   - Features
+   - C++ concepts used
+   - Prerequisites & dependencies
+   - Compilation and execution commands
+   - Example inputs/outputs
+   - Current limitations & planned improvements
+4. **Update the root README.md:** Add the project entry into the repository structure, the Project Index table, and the Project Details section.
+5. **Test the build:** Compile and verify the project cleanly before committing.
+6. **Commit and push:** Stage the changes, commit with a descriptive message, and push to GitHub.
+
+---
+
+## Roadmap
+
+This portfolio is an active workspace. Future additions will continue to explore:
+- Object-Oriented Design (OOP) and modern design patterns.
+- Data structures and algorithms implemented from scratch.
+- Memory management, smart pointers, and RAII.
+- Multi-threading, concurrency, and asynchronous programming.
+- Socket programming and networked systems.

@@ -1,0 +1,50 @@
+# Compiled binaries and executables
+*.exe
+*.out
+*.app
+dob_calculator
+password_manager
+
+# Intermediate object and library files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Debug symbols and directories
+*.dSYM/
+*.pdb
+*.idb
+
+# Build systems and generated directories
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.ninja
+.ninja_*
+
+# Project-specific runtime data and vault secrets (DO NOT COMMIT)
+vault.txt
+vault.txt.tmp
+*.tmp
+
+# Operating system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
