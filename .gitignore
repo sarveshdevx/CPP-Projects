@@ -4,6 +4,7 @@
 *.app
 dob_calculator
 password_manager
+kmap
 
 # Intermediate object and library files
 *.o
@@ -28,9 +29,10 @@ Makefile
 *.ninja
 .ninja_*
 
-# Project-specific runtime data and vault secrets (DO NOT COMMIT)
-vault.txt
-vault.txt.tmp
+# Password Manager demo data
+passwords.txt
+
+# Temporary files
 *.tmp
 
 # Operating system files
