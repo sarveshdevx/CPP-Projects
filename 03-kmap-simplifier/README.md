@@ -8,6 +8,7 @@ The program allows users to enter minterms and don't-care conditions, generates 
 
 ## Features
 
+- Supports 1-variable Karnaugh Maps.
 - Supports 2-variable Karnaugh Maps.
 - Supports 3-variable Karnaugh Maps.
 - Supports 4-variable Karnaugh Maps.
