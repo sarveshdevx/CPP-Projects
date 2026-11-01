@@ -1,6 +1,6 @@
 # KMap Simplifier
 
-A console-based C++ application that simplifies Boolean expressions using Karnaugh Maps (K-Maps) for 2, 3, and 4 variables.
+A console-based C++ application that simplifies Boolean expressions using Karnaugh Maps (K-Maps) for 1, 2, 3, and 4 variables.
 
 The program allows users to enter minterms and don't-care conditions, generates the corresponding Karnaugh Map, and finds a simplified Boolean expression using logical grouping.
 
@@ -36,6 +36,7 @@ This project focuses on implementing fundamental programming and digital logic c
 
 | Variables | K-Map Size | Number of Cells |
 |---|---|---:|
+| 1 Variable (A) | 1 × 2 | 2 |
 | 2 Variables (A, B) | 2 × 2 | 4 |
 | 3 Variables (A, B, C) | 2 × 4 | 8 |
 | 4 Variables (A, B, C, D) | 4 × 4 | 16 |
@@ -138,7 +139,7 @@ Run:
 
 ---
 
-**Status:** In Development
+**Status:** In Development 🚧
 
 **Language:** C++
 
