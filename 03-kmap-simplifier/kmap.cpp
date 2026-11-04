@@ -11,17 +11,19 @@ void takeinput(int nel,vector<int>& arr){
     }
 }
 
-void var1(){
-    cout<<"Unavailable";
-}
 void var2(){
-    cout<<"Unavailable";
+    int kmap[2][2];
+    for (int i =0;i<2;i++){
+        for(int j=0;int j<0;j++){
+            
+        }
+    }
 }
 void var3(){
-    cout<<"Unavailble";
+    int kmap[2][4];
 }
 void var4(){
-    cout<<"Unavailble";
+    int kmap[4][4];
 } 
 
 int main(){
@@ -29,7 +31,7 @@ int main(){
 
     cout<<"Enter The Number Of Variable:\n";
     cin >>n;
-    if(n < 1 || n > 4){
+    if(n < 2 || n > 4){
         cout << "Invalid number of variables";
         return 0;
     }
@@ -45,9 +47,6 @@ int main(){
     cout << endl;
 
     switch(n){
-        case 1:
-            var1();
-            break;
         case 2:
             var2();
             break;
