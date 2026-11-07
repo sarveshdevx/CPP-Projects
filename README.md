@@ -34,8 +34,8 @@ CPP-Projects/
 | # | Project | Description | Status |
 |---|---|---|---|
 | **01** | [DOB & Weekday Calculator](./01-dob-weekday-calculator/) | Calculates the number of days lived and the weekday of birth using calendar arithmetic. | Completed |
-| **02** | [CLI Password Manager](./02-password-manager/) | A command-line application to add, view, update, and delete credentials using C++ file handling. | In Development |
-| **03** | [KMap Simplifier](./03-kmap-simplifier/) | Simplifies Boolean expressions using 2, 3, and 4-variable Karnaugh Maps. | Planned |
+| **02** | [CLI Password Manager](./02-password-manager/) | A command-line application to add, view, update, and delete credentials using C++ file handling, with encryption planned. | Planned |
+| **03** | [KMap Simplifier](./03-kmap-simplifier/) | Simplifies Boolean expressions using Karnaugh Maps. Currently supports 2-variable K-Maps, with 3-variable and 4-variable support planned. | In Development |
 
 ---
 
@@ -48,6 +48,7 @@ The projects in this repository explore various C++ programming concepts:
 - **Problem Solving:** Developing logical solutions to practical problems.
 - **Algorithms:** Implementing step-by-step solutions and logical operations.
 - **Boolean Algebra:** Exploring digital logic and Boolean expression simplification.
+- **Arrays, Vectors & Strings:** Storing and manipulating data.
 - **Modern C++:** Exploring additional language features and programming techniques.
 
 ---
@@ -67,7 +68,7 @@ New projects are added to this repository following a consistent workflow:
 
 ## Roadmap
 
-This repository is an ongoing learning journey. Future projects will explore:
+This repository is an ongoing learning journey. Future projects and improvements will explore:
 
 - Object-Oriented Programming (OOP) and design patterns.
 - Data Structures and Algorithms.
@@ -76,6 +77,8 @@ This repository is an ongoing learning journey. Future projects will explore:
 - Multi-threading and Concurrency.
 - Socket Programming and Networking.
 - Digital Logic Design and Boolean Algebra.
+- 3-variable and 4-variable K-Map simplification.
+- Don't-care conditions and advanced Boolean simplification.
 - Practical C++ application development.
 
 ---
