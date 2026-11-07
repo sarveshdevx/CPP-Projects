@@ -1,84 +1,74 @@
 # KMap Simplifier
 
-A console-based C++ application that simplifies Boolean expressions using Karnaugh Maps (K-Maps) for 1, 2, 3, and 4 variables.
+A console-based C++ application that simplifies Boolean expressions using Karnaugh Maps (K-Maps).
 
-The program allows users to enter minterms and don't-care conditions, generates the corresponding Karnaugh Map, and finds a simplified Boolean expression using logical grouping.
+The project currently supports **2-variable K-Map simplification**. Support for 3-variable and 4-variable K-Maps will be developed in future stages.
 
 ---
 
 ## Features
 
-- Supports 1-variable Karnaugh Maps.
+### Completed
 - Supports 2-variable Karnaugh Maps.
-- Supports 3-variable Karnaugh Maps.
-- Supports 4-variable Karnaugh Maps.
-- Accepts minterms as user input.
-- Supports don't-care conditions.
-- Displays the Karnaugh Map in the correct Gray Code order.
-- Groups adjacent 1s to simplify Boolean expressions.
-- Identifies essential prime implicants.
-- Displays the final minimized Boolean expression.
-- Provides a menu-driven console interface.
+- Accepts K-Map values (0 and 1) as user input.
+- Generates binary representations of minterms.
+- Identifies pairs of adjacent 1s.
+- Generates simplified Boolean expressions.
+- Removes duplicate combinations.
+- Displays the minimized Boolean expression in the terminal.
 
-## Concepts Used
-
-This project focuses on implementing fundamental programming and digital logic concepts using C++.
-
-- **C++ Fundamentals:** Variables, data types, conditional statements, loops and functions.
-- **Arrays and Vectors:** Storing and managing minterms and K-Map values.
-- **Boolean Algebra:** Understanding Boolean expressions and simplification.
-- **Karnaugh Maps:** Gray Code ordering and adjacent cell grouping.
-- **Bitwise Operations:** Working with binary representations of minterms.
-- **Algorithms:** Finding valid groups and generating simplified expressions.
-- **Modular Programming:** Dividing the program into smaller reusable functions.
+### Planned
+- Support for 3-variable Karnaugh Maps.
+- Support for 4-variable Karnaugh Maps.
+- Improved grouping and simplification.
+- Identification of essential prime implicants.
 
 ## Supported Variables
 
-| Variables | K-Map Size | Number of Cells |
-|---|---|---:|
-| 1 Variable (A) | 1 × 2 | 2 |
-| 2 Variables (A, B) | 2 × 2 | 4 |
-| 3 Variables (A, B, C) | 2 × 4 | 8 |
-| 4 Variables (A, B, C, D) | 4 × 4 | 16 |
+| Variables | K-Map Size | Number of Cells | Status |
+|---|---|---:|---|
+| 2 Variables (A, B) | 2 × 2 | 4 | Completed |
+| 3 Variables (A, B, C) | 2 × 4 | 8 | Planned |
+| 4 Variables (A, B, C, D) | 4 × 4 | 16 | Planned |
 
 ## How It Works
 
 1. The user selects the number of variables.
-2. The program accepts the minterms where the Boolean function evaluates to 1.
-3. The user can optionally enter don't-care conditions.
-4. The program generates the corresponding Karnaugh Map.
-5. Adjacent cells are grouped according to K-Map simplification rules.
-6. The program identifies the simplified Boolean expression.
-7. The result is displayed in the terminal.
+2. The program accepts the K-Map values (0 and 1).
+3. The program generates binary representations of the minterms.
+4. Adjacent combinations are compared.
+5. Matching pairs are grouped using `X` as a placeholder.
+6. Duplicate combinations are filtered.
+7. The simplified Boolean expression is displayed in the terminal.
 
 ## Example
 
 **Input:**
 
 ```text
-Enter number of variables: 3
+Enter The Number Of Variable:
+2
 
-Enter number of minterms: 4
-Enter minterms:
-1 3 5 7
-
-Enter number of don't-care conditions: 0
+Please Enter K map values(0 & 1):
+1 1 0 0
 ```
 
 **Expected Output:**
 
 ```text
-Karnaugh Map:
-
-       BC
-       00  01  11  10
-A = 0   0   1   1   0
-A = 1   0   1   1   0
-
-Simplified Boolean Expression:
-
-F = C
+Kmap Evaluation : Ā
 ```
+
+## Concepts Used
+
+This project focuses on implementing fundamental programming and digital logic concepts using C++.
+
+- **C++ Fundamentals:** Variables, data types, conditional statements and loops.
+- **Arrays and Vectors:** Storing and managing K-Map values.
+- **Strings:** Representing binary combinations and manipulating Boolean terms.
+- **Boolean Algebra:** Understanding Boolean expressions and simplification.
+- **Karnaugh Maps:** Understanding adjacent cell grouping.
+- **Modular Programming:** Dividing the program into smaller reusable functions.
 
 ## Requirements
 
@@ -125,21 +115,26 @@ Run:
 
 - Understand how Karnaugh Maps simplify Boolean expressions.
 - Learn to represent binary combinations programmatically.
-- Implement grouping logic using C++.
+- Practise string manipulation in C++.
+- Implement grouping logic using functions and loops.
 - Develop problem-solving and algorithmic thinking.
 - Apply digital logic concepts through programming.
 
 ## Future Improvements
 
-- Add a graphical representation of Karnaugh Maps.
+- Implement 3-variable K-Map simplification.
+- Implement 4-variable K-Map simplification.
+- Add support for don't-care conditions.
+- Identify essential prime implicants.
 - Support Product of Sums (POS) simplification.
 - Display intermediate grouping steps.
+- Add a graphical representation of Karnaugh Maps.
 - Improve input validation and error handling.
 - Add automated test cases for different Boolean functions.
 
 ---
 
-**Status:** In Development 🚧
+**Status:** 2-Variable K-Map Completed | 3-Variable and 4-Variable Development Pending
 
 **Language:** C++
 
