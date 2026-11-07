@@ -118,12 +118,12 @@ void var2(int nel,vector<int>& arr){
     sortstr(s2,s3);
     displayexp(s3);
 }
-void var3(int nel,vector<int>& arr){
-    int kmap[2][4];
-}
-void var4(int nel,vector<int>& arr){
-    int kmap[4][4];
-} 
+// void var3(int nel,vector<int>& arr){
+//     int kmap[2][4];
+// }
+// void var4(int nel,vector<int>& arr){
+//     int kmap[4][4];
+// } 
 
 void sortstr(string &s2,string &s3){
     string s4;
